@@ -1,0 +1,28 @@
+@Library('studio-utils@master') _
+//Library code can be found at https://github.com/mulesoft-labs/tooling-jenkins-utils
+
+pipeline {
+   tools {
+        jdk 'JDK8'
+        maven 'M3'
+    }
+    
+    agent {
+        label 'ubuntu-14.04'
+    }
+
+    stages {
+        stage('Preparation') {
+            steps {
+              cleanWs()
+              git credentialsId: 'git', url: 'https://github.com/mulesoft-labs/mock-maven-repository.git',  branch: 'master'
+            }
+        }
+        
+        stage('Build and deploy') {
+            steps {
+                buildWithMaven("clean deploy")
+            }
+        }
+    }   
+}
