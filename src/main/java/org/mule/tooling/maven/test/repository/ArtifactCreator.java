@@ -79,7 +79,9 @@ public class ArtifactCreator {
         File artifactFile = getFile(repositoryFolder, type);
         artifactFile.createNewFile();
       }
-      new MavenXpp3Writer().write(new FileWriter(pomFile), model);
+      try (Writer fileWriter = new FileWriter(pomFile)) { 
+          new MavenXpp3Writer().write(fileWriter, model);
+      }
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
