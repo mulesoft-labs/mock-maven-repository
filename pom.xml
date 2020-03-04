@@ -5,7 +5,7 @@
 
 	<groupId>org.mule.tooling.test</groupId>
 	<artifactId>mock-maven-repository</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3-SNAPSHOT</version>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
