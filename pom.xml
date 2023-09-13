@@ -11,9 +11,9 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 
-		<aether.version>1.0.2.v20150114</aether.version>
-		<maven.version>3.5.0</maven.version>
-		<junit.version>4.12</junit.version>
+		<maven.version>3.9.3</maven.version>
+		<maven-resolver.version>1.9.13</maven-resolver.version>
+		<junit.version>4.13.2</junit.version>
 	</properties>
 
 	<dependencies>
@@ -23,9 +23,9 @@
 			<version>${maven.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.aether</groupId>
-			<artifactId>aether-util</artifactId>
-			<version>${aether.version}</version>
+			<groupId>org.apache.maven.resolver</groupId>
+			<artifactId>maven-resolver-util</artifactId>
+			<version>${maven-resolver.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
