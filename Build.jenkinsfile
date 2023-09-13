@@ -4,11 +4,10 @@
 pipeline {
    tools {
         jdk 'JDK8'
-        maven 'M3'
     }
     
     agent {
-        label 'ubuntu-14.04'
+        label 'ubuntu-22.04'
     }
 
     stages {
@@ -21,7 +20,7 @@ pipeline {
         
         stage('Build and deploy') {
             steps {
-                buildWithMaven("clean deploy")
+                buildWithMavenWrapper("clean deploy")
             }
         }
     }   
